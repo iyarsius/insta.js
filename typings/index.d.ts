@@ -7,7 +7,7 @@ declare module '@androz2091/insta.js' {
     import { FbnsNotificationUnknown } from 'instagram_mqtt';
 
     export class Client extends EventEmitter {
-        constructor(options: ClientOptions);
+        constructor(options?: ClientOptions);
 
         public user: User | null;
         public ig: ipa.IgApiClient | null;
@@ -97,7 +97,7 @@ declare module '@androz2091/insta.js' {
         public _keepTypingAlive(): void;
         public startTyping(options: StartTypingOptions): Promise<void>;
         public stopTyping(): Promise<void>;
-        public sendMessage(content: string, options: any): Promise<Message>;
+        public sendMessage(content: string, options?: any): Promise<Message>;
         public sendVoice(buffer: Buffer): Promise<Message>;
         public sendPhoto(attachment: string | Buffer | Attachment): Promise<Message>;
         public toJSON(): ChatJSON;
