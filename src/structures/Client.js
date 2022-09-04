@@ -353,7 +353,11 @@ class Client extends EventEmitter {
      * @param {object} [state] Optional state object. It can be generated using client.ig.exportState().
      */
     async login (username, password, state) {
-        const ig = withFbns(withRealtime(new IgApiClient()))
+        const ig = withFbns(withRealtime(new IgApiClient()));
+
+        if (this.options.proxyURL) {
+            ig.state.proxyUrl = this.options.proxyURL;
+        };
         ig.state.generateDevice(username)
         if (state) {
             await ig.importState(state)

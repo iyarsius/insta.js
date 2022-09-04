@@ -249,6 +249,7 @@ declare module '@androz2091/insta.js' {
 
     interface ClientOptions {
         disableReplyPrefix: boolean;
+        proxyURL: string;
     }
 
     interface Cache {
