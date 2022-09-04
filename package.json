@@ -7,7 +7,7 @@
   "author": "Androz2091 <androz2091@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Androz2091/insta.js/issues"
+    "url": "https://github.com/iyarsius/insta.js/issues"
   },
   "exports": {
     ".": [
@@ -23,7 +23,7 @@
     "docs": "docgen --source src --custom docs/index.yml --output docs/docs.json",
     "docs:test": "docgen --source src --custom docs/index.yml"
   },
-  "homepage": "https://github.com/Androz2091/insta.js#readme",
+  "homepage": "https://github.com/iyarsius/insta.js#readme",
   "dependencies": {
     "@discordjs/collection": "^0.1.6",
     "get-urls": "^10.0.0",

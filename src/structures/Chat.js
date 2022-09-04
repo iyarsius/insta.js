@@ -159,6 +159,30 @@ class Chat {
         await this.threadEntity.deleteItem(messageID)
     }
 
+    async like () {
+        await message.chat.threadEntity.broadcast({
+            item: 'reaction',
+            form: {
+                item_id: this.id,
+                node_type: 'item',
+                reaction_type: 'like',
+                reaction_status: 'created'
+            },
+        });
+    };
+
+    async unlike () {
+        await message.chat.threadEntity.broadcast({
+            item: 'reaction',
+            form: {
+                item_id: this.id,
+                node_type: 'item',
+                reaction_type: 'like',
+                reaction_status: 'deleted'
+            },
+        });
+    }
+
     async _keepTypingAlive () {
         if (this.typing) {
             await this.client.ig.realtime.direct.indicateActivity({

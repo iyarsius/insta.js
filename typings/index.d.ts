@@ -156,6 +156,8 @@ declare module '@androz2091/insta.js' {
         public reply(content: string): Promise<Message>;
         public toString(): string;
         public toJSON(): MessageJSON;
+        public like(): Promise<void>;
+        public unlike(): Promise<void>;
     }
 
     class MessageCollector extends EventEmitter {
