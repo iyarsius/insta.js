@@ -198,6 +198,38 @@ class Message {
     }
 
     /**
+     * Like the message
+     * @returns {Promise<void>}
+     */
+    async like () {
+        await this.chat.threadEntity.broadcast({
+            item: 'reaction',
+            form: {
+                item_id: this.id,
+                node_type: 'item',
+                reaction_type: 'like',
+                reaction_status: 'created'
+            },
+        });
+    };
+
+    /**
+     * Unlike the message
+     * @returns {Promise<void>}
+    */
+    async unlike () {
+        await this.chat.threadEntity.broadcast({
+            item: 'reaction',
+            form: {
+                item_id: this.id,
+                node_type: 'item',
+                reaction_type: 'like',
+                reaction_status: 'deleted'
+            },
+        });
+    }
+
+    /**
      * Delete the message
      * @returns {Promise<void>}
      */
