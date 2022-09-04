@@ -358,6 +358,7 @@ class Client extends EventEmitter {
         if (this.options.proxyURL) {
             ig.state.proxyUrl = this.options.proxyURL;
         };
+        
         ig.state.generateDevice(username)
         if (state) {
             await ig.importState(state)
